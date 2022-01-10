@@ -8,15 +8,16 @@ interface ChatItemProps {
   data: Chat;
 }
 
-const config = genConfig();
+const botConfig = genConfig();
+const userConfig = genConfig();
 
 const ChatItem: React.VFC<ChatItemProps> = (props) => {
-  if (props.data.sender == 'bot') {
+  if (props.data.sender === 'bot') {
     return (
       <div css={css({ display: 'flex', flexFlow: 'row', margin: 24 })}>
         <Avatar
           css={css({ width: 40, height: 40, marginRight: 16 })}
-          {...config}
+          {...botConfig}
         />
         <div
           css={css({
@@ -40,11 +41,26 @@ const ChatItem: React.VFC<ChatItemProps> = (props) => {
         >
           {props.data.message}
         </div>
+        <div
+          css={css({
+            height: 'fit-content',
+            marginTop: 'auto',
+            marginLeft: 4,
+            color: 'white',
+            fontSize: 12,
+          })}
+        >
+          {props.data.time.toLocaleTimeString()}
+        </div>
       </div>
     );
   } else {
     return (
       <div css={css({ display: 'flex', flexFlow: 'row-reverse', margin: 24 })}>
+        <Avatar
+          css={css({ width: 40, height: 40, marginLeft: 16 })}
+          {...userConfig}
+        />
         <div
           css={css({
             position: 'relative',
@@ -58,14 +74,25 @@ const ChatItem: React.VFC<ChatItemProps> = (props) => {
               display: 'block',
               position: 'absolute',
               top: 12,
-              left: -12,
+              right: -12,
               content: '""',
               borderTop: '12px solid white',
-              borderLeft: '12px solid transparent',
+              borderRight: '12px solid transparent',
             },
           })}
         >
           {props.data.message}
+        </div>
+        <div
+          css={css({
+            height: 'fit-content',
+            marginTop: 'auto',
+            marginRight: 4,
+            color: 'white',
+            fontSize: 12,
+          })}
+        >
+          {props.data.time.toLocaleTimeString()}
         </div>
       </div>
     );
