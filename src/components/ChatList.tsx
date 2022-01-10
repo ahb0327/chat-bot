@@ -1,15 +1,15 @@
 import React from 'react';
+import { Chat } from '../types';
+import ChatItem from './ChatItem';
 
-export interface Chat {
-  id: string;
-  time: Date;
-  message: string;
+export interface ChatListProps {
+  data: Chat[];
 }
 
-export interface ChatListProps {}
+const ChatList: React.VFC<ChatListProps> = (props) => {
+  const items = props.data.map((chat) => <ChatItem data={chat} />);
 
-const ChatList: React.VFC = () => {
-  return <div></div>;
+  return <>{items}</>;
 };
 
 export default ChatList;
