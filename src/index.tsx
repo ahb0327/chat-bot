@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import 'normalize.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import IoProvider from '../node_modules/socket.io-react-hook/lib/cjs/IoProvider.d';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <IoProvider>
+      <App />
+    </IoProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

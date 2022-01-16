@@ -1,12 +1,15 @@
 /** @jsxImportSource @emotion/react */
 import { css, Global } from '@emotion/react/macro';
 import React, { useState } from 'react';
+import { useSocket } from 'socket.io-react-hook';
 import ChatList from './components/ChatList';
 import InputForm from './components/InputForm';
 import TitleBar from './components/TitleBar';
 import { Chat } from './types';
 
 const App: React.VFC = () => {
+  const { socket, error } = useSocket('http://localhost:4000');
+
   const [data, setData] = useState<Chat[]>([
     {
       sender: 'bot',

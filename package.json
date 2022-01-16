@@ -17,6 +17,7 @@
     "react-icons": "^4.3.1",
     "react-nice-avatar": "^1.2.4",
     "react-scripts": "5.0.0",
+    "socket.io-react-hook": "^1.0.13",
     "typescript": "^4.4.2",
     "web-vitals": "^2.1.0"
   },
