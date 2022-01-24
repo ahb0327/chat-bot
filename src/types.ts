@@ -1,5 +1,5 @@
 export interface Chat {
-  sender: 'bot' | 'user';
-  time: Date;
+  nickname: string;
+  time: number;
   message: string;
 }

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import 'normalize.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import IoProvider from '../node_modules/socket.io-react-hook/lib/cjs/IoProvider.d';
+import { IoProvider } from 'socket.io-react-hook';
 
 ReactDOM.render(
   <React.StrictMode>

@@ -3,7 +3,11 @@ import { css } from '@emotion/react/macro';
 import React from 'react';
 import { BsArrowLeftShort } from 'react-icons/bs';
 
-const TitleBar = () => {
+interface TitleBarProps {
+  title: string;
+}
+
+const TitleBar: React.VFC<TitleBarProps> = (props) => {
   return (
     <div
       css={css({
@@ -22,7 +26,7 @@ const TitleBar = () => {
           alignItems: 'center',
         })}
       >
-        챗봇 이름
+        {props.title}
       </div>
     </div>
   );

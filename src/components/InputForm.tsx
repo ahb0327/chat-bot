@@ -11,7 +11,7 @@ export interface InputFormProps {
 }
 
 const InputForm: React.VFC<InputFormProps> = (props) => {
-  const [input, setInput] = useState('너는 이름이 뭐야?');
+  const [input, setInput] = useState('');
 
   return (
     <form
